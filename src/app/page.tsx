@@ -261,7 +261,7 @@ export default function HomePage() {
           {/* Banner Image (Order is swapped) */}
           <div className="relative w-full aspect-[4/5] md:aspect-auto order-2 md:order-1">
             <Image
-              src="/fabricImage.jpg"
+              src="/fabric-world-02.jpg"
               alt="New Arrivals Banner"
               fill
               className="object-cover"
