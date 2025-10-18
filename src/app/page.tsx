@@ -1,103 +1,179 @@
+// You can place this in 'app/page.tsx' or 'app/home.tsx'
+"use client"; // Required for the menu toggle (useState)
+
+import { useState } from "react"; // Import useState
+import {
+  Search,
+  User,
+  ShoppingCart,
+  Facebook,
+  Instagram,
+  Twitter,
+  Menu,
+  X,
+} from "lucide-react";
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+export default function HomePage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="min-h-screen bg-white">
+      <header className="sticky top-0 z-50 bg-[#e4dfc7] border-b border-gray-200 ">
+        <div className="flex items-center justify-between h-20 px-6 lg:px-10">
+          <div className="flex-1 text-left">
+            <Search className="w-5 h-5 text-gray-700" strokeWidth={1.5} />
+          </div>
+          <div className="flex-[2] text-center">
+            <a
+              href="#"
+              className="text-4xl font-serif font-medium text-gray-800"
+            >
+              <Image
+                src="/fabric-by-meter-logo.png"
+                alt="Fabric By Meter Logo"
+                width={200}
+                height={80}
+                className="mx-auto"
+              />
+            </a>
+          </div>
+          <div className="flex items-center justify-end flex-1 space-x-5">
+            <div className="hidden space-x-4 md:flex">
+              <a href="#" aria-label="Facebook">
+                <Facebook
+                  className="w-4 h-4 text-gray-700"
+                  fill="currentColor"
+                  strokeWidth={0}
+                />
+              </a>
+              <a href="#" aria-label="Instagram">
+                <Instagram
+                  className="w-4 h-4 text-gray-700"
+                  strokeWidth={1.5}
+                />
+              </a>
+              <a href="#" aria-label="Pinterest"></a>
+              <a href="#" aria-label="Twitter">
+                <Twitter
+                  className="w-4 h-4 text-gray-700"
+                  fill="currentColor"
+                  strokeWidth={0}
+                />
+              </a>
+            </div>
+            <a
+              href="#"
+              className="hidden items-center space-x-1 text-sm text-gray-700 font-sans md:flex"
+            >
+              <User className="w-5 h-5" strokeWidth={1.5} />
+              <span>Log in</span>
+            </a>
+            <a
+              href="#"
+              className="hidden items-center space-x-1 text-sm text-gray-700 font-sans md:flex"
+            >
+              <ShoppingCart className="w-5 h-5" strokeWidth={1.5} />
+              <span>Cart (2)</span>
+            </a>
+
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6 text-gray-700" />
+              ) : (
+                <Menu className="w-6 h-6 text-gray-700" />
+              )}
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        <nav
+          className="hidden items-center justify-center h-14 space-x-10 font-sans bg-white md:flex" // Hidden on mobile
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
+          <a href="#" className="text-sm tracking-wide text-gray-700">
+            Shop All
+          </a>
+          <a href="#" className="text-sm tracking-wide text-gray-700">
+            Our Story
+          </a>
+          <a href="#" className="text-sm tracking-wide text-gray-700">
+            Our Craft
+          </a>
+          <a href="#" className="text-sm tracking-wide text-gray-700">
+            Gift Card
+          </a>
+          <a href="#" className="text-sm tracking-wide text-gray-700">
+            Contact
+          </a>
+        </nav>
+
+        {isMenuOpen && (
+          <div className="absolute top-full left-0 right-0 w-full bg-white shadow-lg md:hidden">
+            <nav className="flex flex-col items-center space-y-5 p-6">
+              <a href="#" className="text-lg tracking-wide text-gray-700">
+                Shop All
+              </a>
+              <a href="#" className="text-lg tracking-wide text-gray-700">
+                Our Story
+              </a>
+              <a href="#" className="text-lg tracking-wide text-gray-700">
+                Our Craft
+              </a>
+              <a href="#" className="text-lg tracking-wide text-gray-700">
+                Gift Card
+              </a>
+              <a href="#" className="text-lg tracking-wide text-gray-700">
+                Contact
+              </a>
+
+              <div className="border-t border-gray-200 w-3/4 my-2"></div>
+
+              <a
+                href="#"
+                className="flex items-center space-x-1 text-lg text-gray-700 font-sans"
+              >
+                <User className="w-5 h-5" strokeWidth={1.5} />
+                <span>Log in</span>
+              </a>
+              <a
+                href="#"
+                className="flex items-center space-x-1 text-lg text-gray-700 font-sans"
+              >
+                <ShoppingCart className="w-5 h-5" strokeWidth={1.5} />
+                <span>Cart (2)</span>
+              </a>
+            </nav>
+          </div>
+        )}
+      </header>
+
+      <main className="relative flex flex-col items-center justify-center w-full h-[calc(100vh-80px)] md:h-[calc(100vh-136px)] bg-stone-100 overflow-hidden">
+      
+      <Image
+        src="/fabric-world-02.jpg"   
+        alt="Background"
+        fill                     // makes the image cover the container
+        className="object-cover object-center" 
+        priority                 // ensures it loads fast
+      />
+
+      {/* Overlay content */}
+      <div className="relative flex flex-col items-center text-center px-4 z-10">
+        <h1 className="font-sans text-5xl md:text-7xl font-bold tracking-[0.2em] uppercase text-white drop-shadow-lg">
+          CUE THE FABRIC
+        </h1>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#"
+          className="px-10 py-6 mt-12 text-sm tracking-wider text-white uppercase transition-colors duration-300 bg-transparent hover:bg-[#2d3915] font-sans border-[0.05rem] border-white"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+          Shop the collection
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+    </main>
     </div>
   );
 }
