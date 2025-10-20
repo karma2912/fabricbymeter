@@ -136,9 +136,9 @@ export default function HomePage() {
         <nav className="hidden items-center justify-center h-14 space-x-10 font-sans bg-white md:flex">
           <a href="#" className="text-sm tracking-wide text-gray-700">Shop All</a>
           <a href="#" className="text-sm tracking-wide text-gray-700">Our Story</a>
-          <a href="#" className="text-sm tracking-wide text-gray-700">Our Craft</a>
-          <a href="#" className="text-sm tracking-wide text-gray-700">Gift Card</a>
+          <a href="#" className="text-sm tracking-wide text-gray-700">Wholesale</a>
           <a href="#" className="text-sm tracking-wide text-gray-700">Contact</a>
+          <a href="#" className="text-sm tracking-wide text-gray-700">My Profile</a>
         </nav>
 
         {isMenuOpen && (
