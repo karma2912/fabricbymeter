@@ -85,7 +85,7 @@ export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen ">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-[#e4dfc7] border-b border-gray-200">
         <div className="flex items-center justify-between h-20 px-6 lg:px-10">
@@ -164,14 +164,19 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <main className="relative flex flex-col items-center justify-center w-full h-[calc(100vh-80px)] md:h-[calc(100vh-136px)] bg-stone-100 overflow-hidden">
-        <Image
-          src="/fabric-world-02.jpg"
-          alt="Background"
-          fill
-          className="object-cover object-center"
-          priority
-        />
+      <main className="relative flex flex-col items-center justify-center w-full h-[calc(100vh-80px)] md:h-[calc(100vh-136px)] overflow-hidden">
+        <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        key={Date.now()} // This key forces React to re-render the element
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        src="/my-video.mp4" // <-- ADD SRC HERE
+      >
+        {/* <source src="/my-video.mp4" type="video/mp4" /> <-- REMOVE THIS */}
+        Your browser does not support the video tag.
+      </video>
         <div className="relative flex flex-col items-center text-center px-4 z-10">
           <h1 className="font-sans text-5xl md:text-7xl font-bold tracking-[0.2em] uppercase text-white drop-shadow-lg">
             CUE THE FABRIC
