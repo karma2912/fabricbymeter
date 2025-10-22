@@ -164,7 +164,7 @@ export default function HomePage() {
       {/* Overlay content */}
       <div className="relative flex flex-col items-center text-center px-4 z-10">
         <h1 className="font-sans text-5xl md:text-7xl font-bold tracking-[0.2em] uppercase text-white drop-shadow-lg">
-          CUE THE FABRIC
+          CUE THE FABRICS
         </h1>
         <a
           href="#"
