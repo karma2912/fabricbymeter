@@ -156,9 +156,9 @@ export default function HomePage() {
       <Image
         src="/fabric-world-02.jpg"   
         alt="Background"
-        fill                     // makes the image cover the container
+        fill                  
         className="object-cover object-center" 
-        priority                 // ensures it loads fast
+        priority               
       />
 
       {/* Overlay content */}
