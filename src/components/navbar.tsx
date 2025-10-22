@@ -84,10 +84,10 @@ export default function Navbar() {
         <div
           className="relative"
           // We only need onMouseEnter here. onMouseLeave is now on the parent <header>.
-          onMouseEnter={() => setIsShopDropdownOpen(true)}
+          onMouseEnter={() => setIsShopDropdownOpen(true)} onMouseLeave={()=> setIsShopDropdownOpen(false)}
         >
           <button className="flex items-center space-x-1 text-sm tracking-wide text-black py-2">
-            <span>SHOP ALL</span>
+            <span className="">SHOP ALL</span>
             <ChevronDown
               className={`w-4 h-4 transition-transform duration-200 ${
                 isShopDropdownOpen ? "rotate-180" : ""
