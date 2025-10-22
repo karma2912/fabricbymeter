@@ -105,7 +105,7 @@ export default function Navbar() {
       <div
         // This is now positioned absolutely below the header
         // It transitions in and out with opacity and transform
-        className={`hidden md:block absolute top-[136px] left-0 w-full bg-white border-t border-gray-200 shadow-lg 
+        className={`hidden md:block absolute top-[136px] left-0 w-full bg-[#e4dfc7] shadow-lg 
                     transition-all duration-300 ease-in-out
                     ${
                       isShopDropdownOpen
@@ -128,7 +128,7 @@ export default function Navbar() {
           <div className="grid grid-cols-5 gap-8 flex-1">
             {fabricCategories.map((category, index) => (
               <div key={index} className="text-center">
-                <h4 className="font-semibold text-gray-800 mb-4 text-lg border-b border-gray-300 pb-2">
+                <h4 className="font-semibold text-gray-800 mb-4 text-lg pb-2">
                   {category.name}
                 </h4>
                 <ul className="space-y-2">
@@ -168,7 +168,7 @@ export default function Navbar() {
             <a href="#" className="text-lg tracking-wide text-black">WHOLESALE</a>
             <a href="#" className="text-lg tracking-wide text-black">CONTACT</a>
             <a href="#" className="text-lg tracking-wide text-black">MY PROFILE</a>
-            <div className="border-t border-gray-200 w-3/4 my-2"></div>
+            <div className=" w-3/4 my-2"></div>
             <a href="#" className="flex items-center space-x-1 text-lg text-gray-700 font-sans">
               <User className="w-5 h-5" strokeWidth={1.5} />
               <span>Log in</span>
